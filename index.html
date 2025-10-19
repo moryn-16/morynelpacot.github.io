@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morynel Joy O. Pacot - E-Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #fce0ec 0%, #f8bbd0 50%, #f48fb1 100%);
+            color: #5a3d6b;
+            min-height: 100vh;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 240, 245, 0.95), rgba(248, 187, 208, 0.95));
+            border-bottom: 3px solid #ec407a;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-tagline {
+            font-size: 0.9rem;
+            color: #c2185b;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-family: 'Lora', serif;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #ec407a;
+            text-shadow: 2px 2px 4px rgba(236, 64, 122, 0.1);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #c2185b;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: linear-gradient(90deg, rgba(248, 187, 208, 0.7), rgba(244, 143, 177, 0.7));
+            border-bottom: 2px solid #ec407a;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
+            border: 2px solid #ec407a;
+            border-radius: 30px;
+            color: #880e4f;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 15px rgba(236, 64, 122, 0.2);
+            font-weight: 600;
+            font-family: 'Lora', serif;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(236, 64, 122, 0.35);
+            background: linear-gradient(135deg, #f48fb1 0%, #f06292 100%);
+            border-color: #880e4f;
+        }
+        
+        .nav-link:active {
+            transform: translateY(-1px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem 4rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: #ec407a;
+            text-shadow: 1px 1px 2px rgba(236, 64, 122, 0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ec407a, transparent);
+            margin: 1rem auto 0;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, rgba(255, 240, 245, 0.9), rgba(248, 187, 208, 0.8));
+            padding: 2rem;
+            border: 2px solid #ec407a;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 20px rgba(236, 64, 122, 0.15);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(236, 64, 122, 0.25);
+            background: linear-gradient(135deg, rgba(248, 187, 208, 0.95), rgba(244, 143, 177, 0.9));
+        }
+        
+        .card-gold {
+            background: linear-gradient(135deg, rgba(255, 242, 204, 0.9), rgba(255, 224, 178, 0.85));
+            border: 2px solid #ffa726;
+            box-shadow: 0 6px 20px rgba(255, 167, 38, 0.15);
+        }
+        
+        .card-gold:hover {
+            background: linear-gradient(135deg, rgba(255, 224, 178, 0.95), rgba(255, 204, 153, 0.9));
+            box-shadow: 0 12px 30px rgba(255, 167, 38, 0.25);
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            color: #c2185b;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        p {
+            font-size: 1.05rem;
+            color: #5a3d6b;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        strong {
+            color: #ec407a;
+            font-weight: 700;
+        }
+        
+        .discover-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ec407a 0%, #c2185b 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+            box-shadow: 0 6px 20px rgba(236, 64, 122, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        
+        .discover-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(236, 64, 122, 0.4);
+        }
+        
+        details summary {
+            list-style: none;
+        }
+        
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .treasure-msg {
+            background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
+            border: 2px solid #ec407a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 6px 15px rgba(236, 64, 122, 0.2);
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .section:target {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .intro-box {
+            background: linear-gradient(135deg, rgba(255, 240, 245, 0.95), rgba(248, 187, 208, 0.9));
+            border: 2px solid #ec407a;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(236, 64, 122, 0.15);
+        }
+        
+        .intro-box p {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #880e4f;
+        }
+
+        .media-container {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scroll-behavior: smooth;
+        }
+
+        .media-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .media-container::-webkit-scrollbar-track {
+            background: rgba(236, 64, 122, 0.1);
+            border-radius: 10px;
+        }
+
+        .media-container::-webkit-scrollbar-thumb {
+            background: #ec407a;
+            border-radius: 10px;
+        }
+
+        .media-container::-webkit-scrollbar-thumb:hover {
+            background: #c2185b;
+        }
+
+        .media-container img,
+        .media-container video {
+            flex-shrink: 0;
+            height: 300px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            nav { gap: 1rem; }
+            .nav-link { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-tagline">✨ You know you love me ✨</div>
+        <h1>Morynel Joy</h1>
+        <p class="subtitle">— Portfolio Secrets Revealed —</p>
+    </header>
+    
+    <nav>
+        <a href="#home" class="nav-link">Home & Personal</a>
+        <a href="#ict" class="nav-link">Tech Quest</a>
+        <a href="#araling" class="nav-link">Economics</a>
+    </nav>
+    
+    <div class="container">
+        <section id="home" class="section">
+            <h2>Welcome!</h2>
+            
+            <div class="intro-box">
+                <p>Step into the world of Morynel Joy O. Pacot — where stories unfold. Xoxo</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card card-gold">
+                    <div class="card-title">✨ About Me</div>
+                    <p><strong>Name:</strong> Morynel Joy O. Pacot</p>
+                    <p><strong>Age:</strong> 14 years old</p>
+                    <p><strong>Birthday:</strong> December 16, 2010</p>
+                     <p>I'm a person who can be both outgoing and shy depending on the situation. I enjoy being around people and making new friends, but I also appreciate quiet moments to reflect on my thoughts. My dream is to become either a psychologist or an IT specialist someday. I've always wanted to understand people's emotions better, and my kuya has inspired me to explore the world of technology since I was little.</p>
+                </div>
+                
+                <div class="card card-gold">
+                    <div class="card-title">💎 Quest Treasure</div>
+                    <details>
+                        <summary class="discover-btn">🔍 Discover More</summary>
+                         <div class="treasure-msg">
+                 <div class="media-container">
+                    <img src="joy1.jpg" alt="Me (1)">
+                    <img src="joy2.jpg" alt="Me (2)">
+                    <img src="joy3.jpg" alt="Me(3)">
+                    <img src="joy4.jpg" alt="Me(4)">
+                  <video controls>
+                        <source src="joy5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>   </div>
+
+                        <summary class="discover-btn">My pics and more about me (scroll right to left)</summary>
+                        <div class="treasure-msg">
+                            <p>I'm a Christian, though I admit that I'm still learning how to strengthen my faith and deepen my relationship with God. It's something I remind myself to work on every day.</p>
+                            <p>Back then, I loved reading books and getting lost in stories. Nowadays, I'm still figuring out what hobbies truly make me happy, but I enjoy watching TikTok and cooking whenever I feel like it. Even if I'm still in the process of discovering myself, I know that I'm growing—slowly but surely—into the person I'm meant to be.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            
+            <h2>My Inner Circle</h2>
+            
+            <div class="card">
+                <div class="card-title">🎀 My Favorites</div>
+                <p><strong>Songs:</strong></p>
+                <p>• Love is by The Ridleys</p>
+                <p>• Campfire, To You, and Kidult by Seventeen</p>
+                <p>• Bawat daan by Ebe Dancel</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">💯 My Friends</div>
+                <p>My friends have always felt like an extension of my family. Our group, the Skinnies — Martin, Dash, Maeur, Rolly, Jayzel, me (Joy), Yeuffa, Laurenz, Mark, Nicole, Chloe, and Ayeka — started back in seventh grade. Even though we eventually got separated into different sections and schools, our bond never really changed. Every time we reunite, it still feels like the same old us — full of laughter, inside jokes, and a sense of belonging that's hard to put into words.</p>
+
+<p>Among everyone, I've always been closest to Ayeka and Yeuffa. With Ayeka, I can be my most vulnerable self. She listens without judgment, and no matter how small my problems are, she always makes me feel heard. Yeuffa, on the other hand, brings so much energy and honesty into my life. She's straightforward, funny, and real — the kind of friend who makes even the worst days bearable.</p>
+
+<p>Aya has been my best friend since before I could even spell "best friend." We've known each other since we were younger than five, and she's seen every part of who I am — the loud, the quiet, the broken, and the healed. Nathalie, my friend since sixth grade, might have come into my life a bit later, but she's one of the most genuine people I know. She has this calm presence that makes me feel safe, like I can tell her anything.</p>
+
+<p>No matter how much life changes or where we all end up, I know our friendship will always stay the same. The Skinnies — and the friends who've stayed with me through every chapter — will always feel like home.</p>
+                <div class="media-container">
+                    <video controls>
+                        <source src="love.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <img src="skinnies.jpeg" alt="skinnies12">
+                    <img src="nathalie.jpg" alt="nathalie">
+                    <img src="friends.png" alt="my friends">
+                    <img src="aya.jpg" alt="My bestfriend">
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">❤️ My Family</div>
+                <p>Behind every great girl is an even greater family.</p>
+                
+                <p>One thing I'm really proud of about my family is how we show love in quiet, unspoken ways. My dad isn't the affectionate type — call him nonchalant, if you want. I've never been good at reading his emotions, even when I was little. But behind his calm and serious face is a kind of love that doesn't need words. He's the kind of dad who secretly slips money into my bag even when Mom tells him not to. He'll pick me up whenever he can, just to save me the trouble — or as he always says, "Mas mabuti nang ako na ang magsundo kaysa naman na mag-isa kang umuwi."</p>
+
+                <p>My mom shows her love in a similar way. She's the person I run to when everything feels heavy. I can tell her almost anything because she always tries to understand and support whatever makes me happy. Her quiet presence is my comfort.</p>
+
+                <p>And then there's my sister — my best friend since I was two. I may not be the perfect older sister who knows exactly what to teach her, but I'm grateful for her every day. She understands me in ways no one else can. With her, I can always be myself, knowing I'll never be judged.</p>
+                
+                <div class="media-container">
+                    <video controls>
+                        <source src="lovefam.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <img src="family.jpg" alt="family">
+                    <img src="cy.jpg" alt="mysister">
+                    <img src="mama.jpg" alt="Me and my mommy when I was a year old">
+                    <img src="fambam.jpg" alt="Love">
+                </div>
+            </div>
+        </section>
+        
+        <section id="ict" class="section">
+            <h2>💻 ICT</h2>
+            
+            <div class="card card-gold">
+                <div class="card-title">🎯 Mission 1: Lessons</div>
+                <p>A series of tech-savvy adventures where secrets of code are revealed...</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">📝 Lesson 1 — Introduction to CSS</div>
+                <p><strong>Output:</strong></p>
+                <div class="media-container">
+                    <img src="benefits.png" alt="Benefits of CSS">
+                    <img src="layers.png" alt="Layers of a Webpage">
+                </div>
+
+                <p><strong>Description:</strong> This lesson introduced CSS or Cascading Style Sheets and explained how it works with HTML to design webpages. It also discussed the three layers of a webpage: content, presentation, and behavior.</p>
+
+                <p><strong>What I learned:</strong> I learned that CSS is used to control the look and layout of a webpage while HTML provides the structure. I understood how CSS makes webpages more attractive, consistent, and easier to maintain. I also learned about the benefits of CSS such as saving time, improving design, and making websites load faster.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">📝 Lesson 2 — Types of CSS</div>
+                <p><strong>Output:</strong></p>
+                <div class="media-container">
+                    <img src="internal.png" alt="Internal CSS">
+                    <img src="inline.png" alt="Inline CSS">
+                </div>
+            
+                <p><strong>Description:</strong> This lesson was all about how CSS helps control the design and layout of a webpage. It showed how style sheets make websites more organized and visually appealing by separating content from style.</p>
+                <p><strong>What I learned:</strong> I learned the three kinds of CSS—external, embedded, and inline—and how each one is used to style HTML elements. I also understood how CSS uses selectors, properties, and values to change the appearance of text, colors, and layouts.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📝 Lesson 3 — Display Property, Div and Span Tags</div>
+                <p><strong>Output:</strong></p>
+                <div class="media-container">
+                    <img src="div.png" alt="Div Tag">
+                    <img src="span.png" alt="Span Tag">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📝 Lesson 4 — CSS Rules and Classes</div>
+                <p><strong>Output:</strong></p>
+                <div class="media-container">
+                    <img src="lesson4.png" alt="rules and classes">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📝 Lesson 5 — CSS Selectors</div>
+                <p><strong>Output:</strong></p>
+                <div class="media-container">
+                   <img src="lesson5.png" alt="CSS">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📝 Lesson 6 — Dimensions and Pseudo-classes</div>
+                <p><strong>Output:</strong></p>
+                <div class="media-container">
+                   <img src="lesson6_one.png" alt="Pseudo classes">
+                </div>
+            </div>
+
+            
+            <h2 style="margin-top: 2rem;">🎉 Mission 2: Events</h2>
+            
+            <div class="card card-gold">
+                <div class="card-title">🎊 Season's Most Talked-About Events</div>
+                <p><strong>Featured Appearances:</strong> Buwan ng Wika, Intrams, Science Fair, AP, Teacher's Day, Cluster Meet</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">🎈 Event Spotlight: Buwan ng Wika</div>
+                <details>
+                    <summary class="discover-btn">🔓 View Event Details</summary>
+                    <div class="treasure-msg">
+                        <p><strong>The Scene:</strong> Buwan ng Wika</p>
+                        <div class="media-container">
+                            <video controls>
+                                <source src="wika2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <img src="buwanngwika.jpg" alt="Buwan ng Wika (2)">
+                            <img src="wika.jpg" alt="Buwan ng Wika (1)">
+                        </div>
+<p>📸 Photos & videos by: Ang Paham </p>
+                        <p><strong>💭 Reflection:</strong></p>
+                        <p><strong>• What was the most important moment?</strong></p>
+                        <p>The most important moment was realizing how our Filipino language connects us all as students. Whether through cultural performances, traditional games, or simply speaking in our native tongue, I felt a deep sense of pride in our heritage.</p>
+                        <p><strong>• How do you apply this knowledge?</strong></p>
+                        <p>I now make a conscious effort to use Filipino more in daily conversations and appreciate the beauty of our language. I also try to learn more about different Filipino dialects and regional expressions to better understand our diverse culture.</p>
+                        <p><strong>• Did you participate?</strong></p>
+                        <p>Yes! I participated by wearing traditional Filipino clothing (barong at saya). It was a beautiful experience to dress in our cultural attire and celebrate our heritage alongside my classmates. I also supported my friends who performed and competed.</p>
+                        <p><strong>• How would you teach others?</strong></p>
+                        <p>I would encourage them to actively participate in cultural celebrations, even in simple ways like wearing traditional clothing. Every act of celebrating our culture - big or small - helps keep our Filipino identity alive and strong.</p>
+                        <p><strong>• Why is this important to remember?</strong></p>
+                        <p>Buwan ng Wika reminds us that our language and culture are treasures worth preserving. Wearing barong at saya wasn't just about looking nice - it was a statement of pride in who we are as Filipinos and a commitment to honoring our roots.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card"> 
+                <div class="card-title">🎈 Intrams </div>
+                <details>
+                    <summary class="discover-btn">🔓 View Event Details</summary>
+                    <div class="treasure-msg">
+                        <div class="media-container">
+                            <video controls>
+                                <source src="tabletennis.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <img src="intr.jpg" alt="intrams (1)">
+                            <img src="intrams.jpg" alt="intrams(2)">
+                        </div>
+                        <p>📸 Photos & videos by: Jayzel Zyrine Macawili,LPress, Jade Imperial</p>
+                        <p><strong>🤔 Reflection:</strong></p>
+                        <p>• Most important thing I learned?</p>
+                        <p>I learned that you don't have to be an athlete to be part of the team. Support, encouragement, and school spirit are just as valuable as competing. Being there for my friends showed me the true meaning of camaraderie and unity.</p>
+                        <p>I can apply this by being a supportive friend in all aspects of life - not just in sports. Whether in academics, personal struggles, or achievements, showing up and cheering for others creates stronger bonds and builds a positive community.</p>
+                        <p>• Did I participate? How?</p>
+                        <p>I participated by actively supporting and cheering for my friends and classmates who competed. I was present during events, showed school spirit, and celebrated our section's efforts whether we won or lost.</p>
+                        <p>• How would I explain this?</p>
+                        <p>I would explain that intramurals isn't just about winning medals - it's about teamwork, trying your best, and building friendships. Everyone has a role, whether competing or cheering, and both are equally important for creating memorable experiences.</p>
+                        <p>• Why is this event important?</p>
+                        <p>Intramurals is important because it promotes physical health, teamwork, and school unity. It gives students a break from academic pressure and allows different talents to shine. The event teaches life skills like sportsmanship, resilience, and the value of healthy competition that we'll carry beyond school.</p>
+                    </div>
+                </details>
+            </div>
+                       
+            <div class="card"> 
+                <div class="card-title">🎈 Science Month</div>
+                <details>
+                    <summary class="discover-btn">🔓 View Event Details</summary>
+                    <div class="treasure-msg">
+                        <div class="media-container">
+                            <video controls>
+                                <source src="scie.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <img src="sci.jpg" alt="Science month (2)">
+                            <img src="scimonth.jpg" alt="Science month (1)">
+                        </div>
+ <p>📸 Photos & videos by: LPress, Ang Paham</p>
+
+                        <p><strong>🤔 Reflection:</strong></p>
+                        <p>• Most important thing I learned?</p>
+                        <p>I learned that science is everywhere - not just in laboratories or textbooks. Seeing my friends' projects and experiments showed me how scientific thinking helps us solve real-world problems and understand the world around us better.</p>
+                        <p>• How can I apply what I learned in real-life situations?</p>
+                        <p>I can apply scientific thinking by being more observant and questioning. When faced with problems, I can use the scientific method - observe, hypothesize, test, and conclude. This logical approach works for academic challenges and everyday decision-making.</p>
+                        <p>• Did I participate? How?</p>
+                        <p>Yes! I actively participated in a research colloquium where we presented our study on using biodiesel (cocomethyl) as an alternative fuel to reduce carbon emissions. Presenting our findings and answering questions from judges and audiences was both challenging and rewarding.</p>
+                        <p>• If I were to teach this topic/subject to a classmate, how would I explain it?</p>
+                        <p>I would explain that science research isn't just about memorizing facts - it's about finding solutions to real problems. Using our biodiesel research as an example, I'd show how scientific method helps us test alternatives that can help save our environment from pollution and climate change.</p>
+                        <p>• Why is this event important?</p>
+                        <p>Science Month is important because it showcases how science can solve real-world problems like climate change and pollution. Events like research colloquiums allow students to develop critical thinking, presentation skills, and environmental awareness. It inspires us to use science for innovation and to create a more sustainable future for our planet.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card"> 
+                <div class="card-title">🎈 AP Month</div>
+                <details>
+                    <summary class="discover-btn">🔓 View Event Details</summary>
+                    <div class="treasure-msg">
+                        <div class="media-container">
+                            <video controls>
+                                <source src="apmonth.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <img src="time.jpg" alt=" AP Month (2)">
+                            <img src="mari.jpg" alt=" AP Month (1)">
+                        </div>
+ <p>📸 Photos & videos by: AP Club, Ang Paham</p>
+
+                        <p><strong>🤔 Reflection:</strong></p>
+                        <p>• Most important thing I learned?</p>
+                        <p>I learned how economics and history are deeply connected to our daily lives. Understanding concepts like demand, supply, and elasticity, along with our historical background, helps me make sense of current events and societal issues.</p>
+                        <p>• How can I apply what I learned in real-life situations?</p>
+                        <p>I can apply this by being a more informed consumer and citizen. Understanding economic principles helps me make smarter decisions about spending and saving. Knowledge of history helps me understand current political and social issues and participate in discussions meaningfully.</p>
+                        <p>• Did I participate? How?</p>
+                        <p>I participated through drawing an editorial cartoon, attending seminars, and taking the quiz bee in class. While I didn't join competitions, I actively learned the material and tried to understand how these subjects relate to real life.</p>
+                        <p>• If I were to teach this topic/subject to a classmate, how would I explain it?</p>
+                        <p>I would use everyday examples - like why jeepney fares increase, how sari-sari stores operate, or how EDSA Revolution changed our government. Making it relatable and showing how history and economics affect their daily lives makes learning more interesting and meaningful.</p>
+                        <p>• Why is this event important?</p>
+                        <p>Araling Panlipunan month is crucial because these subjects teach us to be responsible citizens. Economics helps us understand how society functions financially, while history prevents us from repeating past mistakes. Together, they equip us with knowledge to make informed decisions for our country's future.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card"> 
+                <div class="card-title">🎈 Teachers' Day</div>
+                <details>
+                    <summary class="discover-btn">🔓 View Event Details</summary>
+                    <div class="treasure-msg">
+                        <div class="media-container">
+                             <video controls>
+                                <source src="teacher.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+
+                            <img src="mscani.jpg" alt="Teachers' Day(2)">
+                            <img src="ll.jpg" alt="Teachers' Day(1)">
+                        </div>
+ <p>📸 Photos & videos by: Zedrick Bumanglag, Arkin Nava, Chaello Abellon</p>
+
+                        <p><strong>🤔 Reflection:</strong></p>
+                        <p>• Most important thing I learned?</p>
+                        <p>I learned the importance of gratitude and recognition. Seeing how happy our teachers were with simple gestures like flowers reminded me that appreciation doesn't need to be grand - sincerity matters most.</p>
+                        <p>• How can I apply what I learned in real-life situations?</p>
+                        <p>I can apply this by regularly showing appreciation to people who help me - not just teachers, but parents, friends, and anyone who makes a difference in my life. Small acts of kindness and gratitude strengthen relationships and create a positive environment.</p>
+                        <p>• Did I participate? How?</p>
+                        <p>Yes because as an officer, I actively participated by helping prepare and arrange flowers for our teachers. Being part of the organizing team and seeing their genuine appreciation made the experience meaningful and fulfilling.</p>
+                        <p>• If I were to teach this topic/subject to a classmate, how would I explain it?</p>
+                        <p>I would explain that Teachers' Day isn't just a formality - it's about recognizing the people who shape our future. Teachers sacrifice time and energy for us, and showing appreciation strengthens the student-teacher relationship, making learning more enjoyable for everyone.</p>
+                        <p>• Why is this event important?</p>
+                        <p>Teachers' Day is important because teachers deserve recognition for their dedication and hard work. This event reminds us to value education and the people who provide it. It also strengthens the school community by fostering mutual respect between students and teachers, creating a better learning environment.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="card"> 
+                <div class="card-title">🎈 Cluster Meet</div>
+                <details>
+                    <summary class="discover-btn">🔓 View Event Details</summary>
+                    <div class="treasure-msg">
+                        <div class="media-container">
+                            <video controls>
+                                <source src="cluster.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <img src="lpsci.jpg" alt="Cluster Meet (2)">
+                            <img src="greenschool.jpg" alt="Cluster Meet (1)">
+                        </div>
+                        <p><strong>🤔 Reflection:</strong></p>
+                        <p>• Most important thing I learned?</p>
+                        <p>I learned the power of support and school pride. Watching my friends compete and representing our school taught me that being part of a community means showing up for each other, celebrating successes, and providing encouragement through challenges.</p>
+                        <p>• How can I apply what I learned in real-life situations?</p>
+                        <p>I can apply this by being present and supportive in all situations - whether friends are competing, presenting, or facing difficulties. Being a reliable support system builds trust and strengthens friendships beyond just school events.</p>
+                        <p>• Did I participate? How?</p>
+                        <p>I participated by supporting and cheering for my friends who competed in various contests. Being there to encourage them, celebrate their efforts, and show school spirit was my way of actively contributing to our school's representation.</p>
+                        <p>• If I were to teach this topic/subject to a classmate, how would I explain it?</p>
+                        <p>I would explain that cluster meet is about representing your school with pride and learning from others. It's not just about winning - it's about gaining experience, meeting talented students from other schools, and growing through healthy competition and support.</p>
+                        <p>• Why is this event important?</p>
+                        <p>Cluster Meet is important because it challenges students to excel beyond their comfort zones and represent their school at a higher level. It promotes healthy competition, exposes students to different schools' strengths, and builds character through both victory and defeat. The event fosters school pride and unity.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+        <section id="araling" class="section">
+            <h2>📚 Economics Adventure</h2>
+            
+            <div class="card card-gold">
+                <div class="card-title">🌟 Unit: Maykroekonomiks</div>
+                <p>A journey through the secrets of economics. Two visual lessons per topic.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">1️⃣ Demand</div>
+                <p><strong>📘 Kahulugan:</strong> Ang demand ay tumutukoy sa dami ng produkto o serbisyo na gusto at kayang bilhin ng mamimili sa isang takdang presyo at panahon.</p>
+                <p><strong>Batas ng Demand: Ceteris paribus</strong> Kapag tumataas ang presyo, bumababa ang demand; kapag bumababa ang presyo, tumataas ang demand — ito ay may inversong ugnayan sa pagitan ng presyo at dami ng demand.</p>
+                <p><strong>Mga Salik na Nakaaapekto sa Demand:</strong></p>
+                <p>Kita ng Mamimili — kapag tumaas ang kita, tumataas din ang demand.</p>
+                <p>Panlasa at Kagustuhan — mas gusto ng mamimili, mas mataas ang demand.</p>
+                <p>Presyo ng Kaugnay na Produkto — maaaring kapalit (substitute) o kasabay (complement).</p>
+                <p>Dami ng Mamimili — mas maraming mamimili, mas mataas ang kabuuang demand.</p>
+                <p><strong>Halimbawa:</strong> Inaasahan sa Hinaharap — kung inaasahan ang pagtaas ng presyo, bibilhin agad ngayon.</p>
+                <div class="media-container">
+                    <img src="s&d.jpg" alt="Demand (2)">
+                    <img src="law.png" alt="Demand(1)">
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">2️⃣ Supply</div>
+                <p><strong>📘 Kahulugan:</strong> Ang supply ay dami ng produkto o serbisyo na handa at kayang ipagbili ng mga prodyuser sa takdang presyo at panahon.</p>
+                <p><strong>Batas ng Supply: Ceteris paribus</strong> Kapag tumataas ang presyo, tumataas ang supply; kapag bumababa ang presyo, bumababa ang supply — may direktang ugnayan sa pagitan ng presyo at dami ng supply.</p>
+                <p><strong>Mga Salik na Nakaaapekto sa Supply:</strong></p>
+                <p>Teknolohiya — mas modernong teknolohiya, mas mabilis ang produksyon.</p>
+                <p>Presyo ng Input — kung tumaas ang presyo ng materyales, bababa ang supply.</p>
+                <p>Bilang ng Prodyuser — mas maraming gumagawa, mas mataas ang kabuuang supply.</p>
+                <p>Inaasahan sa Presyo — kung inaasahan ang pagbaba ng presyo, babawasan muna ang supply.</p>
+                <p>Kalikasan at Panahon — bagyo, tagtuyot, at iba pa ay maaaring magpababa ng supply.</p>
+                <p><strong>Halimbawa:</strong> Kapag tumaas ang presyo ng mangga, mas maraming magsasaka ang magbebenta nito.</p>
+                <div class="media-container">
+                    <img src="ply.png" alt="Supply (2)">
+                    <img src="sup.jpg" alt="Supply(1)">
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">3️⃣ Elasticity</div>
+                <p><strong>📘 Kahulugan:</strong> Ang price elasticity ay sumusukat kung gaano kalaki ang pagtugon ng demand o supply sa pagbabago ng presyo.</p>
+                <p><strong>Mga Uri ng Elastisidad:</strong></p>
+                <p>Elastic Demand — malaking pagbabago sa dami kahit maliit na pagbabago sa presyo (hal. luxury goods).</p>
+                <p>Inelastic Demand — maliit na pagbabago sa dami kahit malaki ang pagbabago sa presyo (hal. bigas, gamot).</p>
+                <p>Unitary Elastic — parehong porsyento ng pagbabago sa presyo at demand.</p>
+                <p><strong>Halimbawa:</strong> Kapag tumaas ng 10% ang presyo ng softdrinks at bumaba ang demand ng 30%, ito ay elastic.</p>
+                <div class="media-container">
+                    <img src="elasticity.jpg" alt="Types of Elasticity">
+                    <img src="Price_Elasticity.png" alt="Types of Elasticity(2)">
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">4️⃣ Market Equilibrium</div>
+                <p><strong>📘 Kahulugan:</strong> Ang market equilibrium ay kalagayan kung saan nagtatagpo ang demand at supply — dito walang labis (surplus) o kulang (shortage).</p>
+                <p><strong>Mga Sangkap:</strong></p>
+                <p>Equilibrium Price (Presyo ng Kabalansahan): Presyong nagpapantay sa demand at supply.</p>
+                <p>Equilibrium Quantity: Dami ng produkto na ibinenta sa equilibrium price.</p>
+                <p><strong>Halimbawa:</strong> Kung ang presyo ng itlog ay ₱7 bawat piraso at parehong 1,000 piraso ang gusto ng mamimili at ibinebenta ng prodyuser, ito ang equilibrium point.</p>
+                <p><strong>Di Kabalanseng Kalagayan:</strong></p>
+                <p>Surplus: mas marami ang supply kaysa demand → pagbaba ng presyo.</p>
+                <p>Shortage: mas marami ang demand kaysa supply → pagtaas ng presyo.</p>
+ <div class="media-container">
+                    <img src="equilibrium-quantity.jpg" alt="Market Equilibrium">
+                    <img src="elp.png" alt="Market Equilibrium(2)">
+                </div>
+
+            </div>
+            
+            <div class="card">
+                <div class="card-title">5️⃣ 💐 Lesson 5 – Iba’t Ibang Estruktura ng Pamilihan</div>
+                <p><strong>📘 Kahulugan:</strong>  </p>
+  <p>Ang market structure ay tumutukoy sa uri ng kompetisyon sa pagitan ng mga prodyuser sa merkado. </p>
+
+ <p><strong>1. Ganap na Kompetisyon</strong></p>
+ <p>- Maraming nagbebenta at bumibili.</p>
+ <p>- Pare-pareho ang produkto.</p>
+ <p>- Walang kontrol sa presyo.</p>
+ <p><strong>- Halimbawa:</strong> palengke, gulayan.</p>
+
+ <p><strong>2. Monopolyo</strong></p>
+ <p>- Isang kompanya lang ang nagbebenta.</p>
+ <p>- Walang katunggali kaya kontrolado ang presyo.</p>
+ <p>- Halimbawa:</strong> Meralco (kuryente).</p>
+
+ <p><strong>3. Monopolistikong Kompetisyon</p>
+ <p>- Maraming nagbebenta pero may kaunting pagkakaiba sa produkto.</p>
+ <p>- Gumagamit ng brand name o advertisement.</p>
+ <p><strong>- Halimbawa:</strong>sabon, toothpaste, gatas.</p>
+
+ <p><strong>4. Oligopolyo</strong></p>
+ <p>- Kaunting kompanya ang nagkokontrol ng presyo.</p>
+ <p>- Kadalasang nagkakasundo sa presyo o promosyon.</p>
+ <p><strong>- Halimbawa:</strong> telco companies, oil firms.</p>    
+<div class="media-container">
+                    <img src="lesson5(1).png" alt="Estruktura ng Pamilihan">
+                    <img src="estruktura.png" alt="Estruktura ng Pamilihan(2)">
+                </div> </div>
+ 
+
+            
+            <div class="card">
+                <div class="card-title">🌸 Aralin 6 – Bahaging Ginagampanan ng Pamahalaan sa Ekonomiya</div>
+                <p><strong>💐 Layunin:</strong></p>
+
+<p>- Panatilihin ang patas na kompetisyon</p>
+<p>- Protektahan ang mamimili at prodyuser</p>
+<p>- Kontrolin ang presyo at iwasan ang pang-aabuso</p>
+
+<p><strong>🏷️ 1. Price Act (RA 7581, binago ng RA 10623)</strong></p>
+<p>- Pinoprotektahan ang mamimili laban sa sobrang taas ng presyo sa panahon ng krisis</p>
+<p>- Pinapayagan ang pamahalaan na magtakda ng price ceiling</p>
+<p>- Laban sa hoarding, profiteering, at cartel</p>
+
+<p><strong>🛍️ 2. Consumer Act (RA 7394)</strong></p>
+<p>- Pinangangalagaan ang karapatan ng mamimili sa kaligtasan, impormasyon, pagpili, at pagreklamo</p>
+<p>- Ipinapatupad ng DTI, DOH, at DA</p>
+
+<p><strong>📉 3. Price Ceiling</strong></p>
+<p>- Pinakamataas na presyo na puwedeng ipataw ng nagtitinda</p>
+<p>- Tulong sa mga mamimili para makabili ng abot-kayang produkto</p>
+<p>- Halimbawa: pagtatakda ng presyo sa bigas</p>
+
+<p><strong>📈 4. Price Floor</strong></p>
+<p>- Pinakamababang presyo na itinatalaga ng pamahalaan</p>
+<p>- Proteksyon sa mga prodyuser at manggagawa</p>
+<p>- Halimbawa: minimum wage</p>
+
+<p><strong>- 🌷 Tinitiyak ng pamahalaan na may patas na presyo at protektado ang mamimili at prodyuser laban sa pananamantala.</strong></p>
+                 <div class="media-container">
+                    <img src="priceceiling.jpg" alt="Price Ceiling">
+                    <img src="123.jpg" alt="Price Floor(2)">
+                </div> </div>
+
+        </section>
+    </div>
+</body>
+</html>
